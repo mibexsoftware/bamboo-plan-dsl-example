@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+
+sourceSets {
+    jobs {
+        groovy {
+            srcDirs 'dsls'
+            compileClasspath += main.compileClasspath
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile 'com.github.mibexsoftware:bamboo-plan-dsl-plugin:1.1.1'
+    compile group: 'org.apache.ant', name: 'ant', version: '1.8.2'
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
+}
+
+test {
+    inputs.files sourceSets.jobs.groovy.srcDirs
+}

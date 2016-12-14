@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.mibexsoftware:bamboo-plan-dsl-plugin:1.3.0'
+    compile 'com.github.mibexsoftware:bamboo-plan-dsl-plugin:1.3.2'
     compile group: 'org.apache.ant', name: 'ant', version: '1.8.2'
     testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
 }

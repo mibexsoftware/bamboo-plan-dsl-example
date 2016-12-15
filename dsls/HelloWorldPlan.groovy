@@ -1,5 +1,6 @@
 project(key: 'MYPROJECT', name: 'My project') {
     plan(key: 'MYPLAN', name: 'My plan') {
+
         stage(name: 'My stage') {
             description 'My stage'
             manual false
@@ -13,6 +14,13 @@ project(key: 'MYPROJECT', name: 'My project') {
                         environmentVariables 'MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"'
                     }
                 }
+            }
+        }
+
+        deploymentProject(name: 'my deployment project') {
+            environment(name: 'staging') {
+            }
+            environment(name: 'production') {
             }
         }
     }

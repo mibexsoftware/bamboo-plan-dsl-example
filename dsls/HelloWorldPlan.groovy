@@ -3,7 +3,6 @@ project(key: 'MYPROJECT', name: 'My project') {
 
         stage(name: 'My stage') {
             description 'My stage'
-            manual false
 
             job(key: 'BUILD', name: 'Maven build job' ) {
                 tasks {

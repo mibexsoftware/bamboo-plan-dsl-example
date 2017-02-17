@@ -6,7 +6,7 @@ project(key: 'MYPROJECT', name: 'My project') {
         stage(name: 'My stage') {
             description 'My stage'
 
-            job(key: 'BUILD', name: 'Maven build job' ) {
+            job(key: 'BUILD', name: 'Example job' ) {
                 def myTasks = tasks {}
                 MyUtility.addHelloWorldTask(myTasks)
                 MyUtility.injectBambooVariables(myTasks)

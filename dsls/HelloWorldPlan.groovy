@@ -1,3 +1,5 @@
+import utilities.MyUtility
+
 project(key: 'MYPROJECT', name: 'My project') {
     plan(key: 'MYPLAN', name: 'My plan') {
 
@@ -5,15 +7,9 @@ project(key: 'MYPROJECT', name: 'My project') {
             description 'My stage'
 
             job(key: 'BUILD', name: 'Maven build job' ) {
-                tasks {
-                    script() {
-                        description 'echo hello world'
-                        inline {
-                            interpreter ScriptInterpreter.LEGACY_SH_BAT
-                            scriptBody 'echo "Hello World"'
-                        }
-                    }
-                }
+                def myTasks = tasks {}
+                MyUtility.addHelloWorldTask(myTasks)
+                MyUtility.injectBambooVariables(myTasks)
             }
         }
 

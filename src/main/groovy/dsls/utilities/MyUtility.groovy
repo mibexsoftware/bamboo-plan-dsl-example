@@ -1,4 +1,4 @@
-package utilities
+package dsls.utilities
 
 import ch.mibex.bamboo.plandsl.dsl.tasks.Tasks
 import ch.mibex.bamboo.plandsl.dsl.tasks.ScriptTask.ScriptInterpreter

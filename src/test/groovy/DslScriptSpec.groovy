@@ -1,5 +1,3 @@
-package dsls
-
 import ch.mibex.bamboo.plandsl.dsl.DslScriptContext
 import ch.mibex.bamboo.plandsl.dsl.DslScriptParserImpl
 import spock.lang.Specification
@@ -24,8 +22,8 @@ class DslScriptSpec extends Specification {
 
     private static def findDslFiles() {
         List<File> files = []
-        new File('src/main/groovy/dsls').eachFileRecurse {
-            if (!it.path.contains('/utilities/') && it.name.endsWith('.groovy')) {
+        new File('plan-definitions').eachFileRecurse {
+            if (it.name.endsWith('.groovy')) {
                 files << it
             }
         }

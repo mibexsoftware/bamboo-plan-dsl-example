@@ -25,7 +25,7 @@ class DslScriptSpec extends Specification {
     private static def findDslFiles() {
         List<File> files = []
         new File('src/main/groovy/dsls').eachFileRecurse {
-            if (!it.path.contains('/utilities/') && it.name.endsWith('.groovy')) {
+            if (!it.path.contains("${File.separator}utilities${File.separator}") && it.name.endsWith('.groovy')) {
                 files << it
             }
         }

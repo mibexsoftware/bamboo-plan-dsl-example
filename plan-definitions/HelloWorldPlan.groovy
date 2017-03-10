@@ -1,6 +1,4 @@
-package dsls
-
-import dsls.utilities.MyUtility
+import MyUtility
 
 project(key: 'MYPROJECT', name: 'My project') {
     plan(key: 'MYPLAN', name: 'My plan') {

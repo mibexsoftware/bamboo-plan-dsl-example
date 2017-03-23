@@ -1,5 +1,3 @@
-
-
 import dsls.utilities.MyUtility
 
 project(key: 'MYPROJECT', name: 'My project') {

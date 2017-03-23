@@ -13,7 +13,8 @@ class DslScriptSpec extends Specification {
 
         when:
         def loader = new DslScriptParserImpl()
-        loader.parse(new DslScriptContext(file.text))
+        def additionalClassPath = new File('src/main/groovy').toURI().toURL()
+        loader.parse(new DslScriptContext(file.toURI().toString(), null, additionalClassPath))
 
         then:
         noExceptionThrown()

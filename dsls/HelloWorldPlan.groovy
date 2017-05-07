@@ -1,5 +1,9 @@
 import dsls.utilities.MyUtility
 
+/**
+ * Plan DSL for Bamboo.
+ * Learn more at <a href="https://github.com/mibexsoftware/bamboo-plan-dsl-plugin/wiki">https://github.com/mibexsoftware/bamboo-plan-dsl-plugin/wiki</a>
+ */
 project(key: 'MYPROJECT', name: 'My project') {
     plan(key: 'MYPLAN', name: 'My plan') {
 

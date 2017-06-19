@@ -12,7 +12,7 @@ project:
               tasks:
                 - !script
                   inlineScript:
-                    scriptBody: echo "!env bamboo.buildKey"
+                    scriptBody: echo "Hello plan"
       deploymentProjects:
               - id: 1
                 name: DP1
@@ -27,4 +27,4 @@ project:
                     tasks:
                       - !script
                         inlineScript:
-                          scriptBody: echo "building !env bamboo.deploy.release"
+                          scriptBody: echo "Hello deployment project"

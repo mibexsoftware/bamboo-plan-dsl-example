@@ -1,0 +1,15 @@
+project:
+  key: MYPROJECT
+  name: This is my project
+  plans:
+    - key: MYPLAN
+      name: my plan
+      stages:
+        - name: mystage
+          jobs:
+            - key: MYJOB
+              name: myjob
+              tasks:
+                - !script
+                  inlineScript:
+                    scriptBody: echo "hello world"

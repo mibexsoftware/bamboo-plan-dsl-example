@@ -17,7 +17,6 @@ project:
               - id: 1
                 name: DP1
                 description: my deployment project
-                useCustomPlanBranch: develop
                 environments:
                   - name: staging
                     id: 1

@@ -1,30 +1,23 @@
 project:
-  key: MYPROJECT2
-  name: This is my project 2
+  key: MYPROJECT
+  name: My project
   plans:
-    - key: MYPLAN2
-      name: my plan 2
+    - key: MYPLAN
+      name: My plan
       stages:
-        - name: mystage
+        - name: My stage
           jobs:
-            - key: MYJOB
-              name: myjob
+            - key: BUILD
+              name: Maven build job
               tasks:
-                - !script
-                  inlineScript:
-                    scriptBody: echo "Hello plan"
+                - !maven3x
+                  goal: install
+                  description: build plug-in
+                  executable: maven323
+                  buildJdk: jdk8
+                  environmentVariables: MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
       deploymentProjects:
-              - id: 1
-                name: DP1
-                description: my deployment project
+              - name: my deployment project
                 environments:
                   - name: staging
-                    id: 1
-                    description: Staging env
                   - name: prod
-                    id: 2
-                    description: Production env
-                    tasks:
-                      - !script
-                        inlineScript:
-                          scriptBody: echo "Hello deployment project"

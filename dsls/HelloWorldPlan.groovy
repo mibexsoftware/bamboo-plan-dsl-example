@@ -6,7 +6,13 @@ import dsls.utilities.MyUtility
  * https://github.com/mibexsoftware/bamboo-plan-dsl-plugin/wiki</a>
  */
 
-// create a global repository with Bamboo's exported API
+// This is an example which shows various aspects of the Plan DSL for Bamboo plug-in. It shows how to access the exported
+// Bamboo API's by creating a global repository definition programatically. Then, it shows how to use the Groovy-based
+// Plan DSL to create a buid plan including two deployment projects. The plan has a build job that checks this
+// Github repository out and then runs the Groovy unit tests. In there, it also shows how to put common code that is
+// used across your DSL files into a separate module (see "MyUtility").
+
+// Create a global repository definition
 def repoName = 'plan-dsl-example'
 def gitConfig = chainCreationService.getBuildConfigurationWithDefaults()
 gitConfig.setProperty('repository.github.repository', 'mibexsoftware/bamboo-plan-dsl-plugin')

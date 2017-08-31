@@ -4,24 +4,14 @@ import ch.mibex.bamboo.plandsl.dsl.tasks.Tasks
 
 class MyUtility {
 
-    static void addHelloWorldTask(Tasks tasks) {
+    static void addGradleTest(Tasks tasks) {
         tasks.with {
             script() {
-                description 'echo hello world'
+                description 'run tests'
                 inline {
                     interpreter ScriptInterpreter.LEGACY_SH_BAT
-                    scriptBody 'echo "Hello World"'
+                    scriptBody './gradlew test'
                 }
-            }
-        }
-    }
-
-    static void injectBambooVariables(Tasks tasks) {
-        tasks.with {
-            injectBambooVariables(propertiesFilePath: 'envVars.properties', namespace: 'test') {
-                description "Inject Build Variables"
-                isFinal true
-                variablesScope VariablesScope.RESULT
             }
         }
     }

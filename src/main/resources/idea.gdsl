@@ -4,6 +4,19 @@
 contributor(context(scope: scriptScope())) {
     property(name: 'env', type: 'ch.mibex.bamboo.plandsl.dsl.BambooEnvironment')
     property(name: 'out', type: 'ch.mibex.bamboo.plandsl.dsl.Logger')
+    property(name: 'encryptionService', type: 'com.atlassian.bamboo.security.EncryptionService')
+    property(name: 'projectManager', type: 'com.atlassian.bamboo.project.ProjectManager')
+    property(name: 'taskManager', type: 'com.atlassian.bamboo.task.TaskManager')
+    property(name: 'chainCreationService', type: 'com.atlassian.bamboo.build.creation.ChainCreationService')
+    property(name: 'deletionService', type: 'com.atlassian.bamboo.deletion.DeletionService')
+    property(name: 'chainBranchManager', type: 'com.atlassian.bamboo.plan.branch.ChainBranchManager')
+    property(name: 'taskConfigurationService', type: 'com.atlassian.bamboo.task.TaskConfigurationService')
+    property(name: 'bambooUserManager', type: 'com.atlassian.bamboo.user.BambooUserManager')
+    property(name: 'planManager', type: 'com.atlassian.bamboo.plan.PlanManager')
+    property(name: 'variableDefinitionManager', type: 'com.atlassian.bamboo.variable.VariableDefinitionManager')
+    property(name: 'variableDefinitionFactory', type: 'com.atlassian.bamboo.variable.VariableDefinitionFactory')
+    property(name: 'repositoryDefinitionManager', type: 'com.atlassian.bamboo.repository.RepositoryDefinitionManager')
+    property(name: 'repositoryConfigurationService', type: 'com.atlassian.bamboo.repository.RepositoryConfigurationService')
 }
 
 contributor(context(pathRegexp: /.*\/dsls\/.*\.groovy/), {
